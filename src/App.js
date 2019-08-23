@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Validation from "./Component/Validation";
+import "./App.css";
 
 function App() {
+  const [inputLength, setInputLength] = useState("");
+
+  const inputTextHandler = e => {
+    setInputLength(e.target.value);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Udemy Assignment 2</h1>
+      <input type="text" value={inputLength} onChange={inputTextHandler} />
+      <p>Length: {inputLength}</p>
+      <Validation textLength={inputLength.length} />
     </div>
   );
 }
