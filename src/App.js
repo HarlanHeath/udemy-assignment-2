@@ -13,8 +13,8 @@ function App() {
   const deleteCharHandler = index => {
     const text = inputLength.split("");
     text.splice(index, 1);
-    const updatedText = text.join(" ");
-    setInputLength(text);
+    const updatedText = text.join("");
+    setInputLength(updatedText);
   };
 
   const charList = inputLength.split("").map((char, index) => {
